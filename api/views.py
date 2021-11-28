@@ -1,5 +1,4 @@
 from django.contrib.auth.models import User
-from rest_framework import generics
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
@@ -41,7 +40,7 @@ class ProductView(APIView):
     if id is not None:
       product = Product.objects.get(id=id)
       serializer = ProductSerializer(product)
-      Response(serializer.data)
+      return Response(serializer.data)
 
     product = Product.objects.all()
     serializer = ProductSerializer(product, many=True)

@@ -7,7 +7,7 @@ urlpatterns = [
 
   path('mini_categories', Mini_categoryView.as_view()),
 
-  path('products/', ProductView.as_view()),
+  path('products', ProductView.as_view()),
   path('products/<int:pk>', ProductView.as_view()),
 
   path('users', UserView.as_view()),
